@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+    
     <h1>Linkem</h1>
-    {% if user.is_authenticated %}
-        <form action="" method="POST">
-            {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit">Submit</button>
-        </form>
+    <h1>Hello {{user}}</h1>
+    {%if links %}
+        {% for link in links %}
+            <h3> {{link.link_for}}: </h3>
+            <p >{{link.link}}</p>
+        {% endfor %}
     {% else %}
-        <p>You are not login... Make sure you <a href="{%url 'login'%}">Login Here</a></p>
-    {%endif%}
+        <p>You have not added any link.. Add link <a href="{%url 'addlink' %}">here</a></p>
+    {% endif %}
 {% endblock content %}
 

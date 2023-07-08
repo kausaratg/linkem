@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Linkem</h1>
+    {% if user.is_authenticated %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <p>You are not login... Make sure you <a href="{%url 'login'%}">Login Here</a></p>
+    {%endif%}
+{% endblock content %}
+
