@@ -1,10 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Registration Page</h1>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">Enter</button>
-    </form>
+ 
+
+    <section>
+
+        <div class="content">
+            <div class="left">
+                <img src="https://i.postimg.cc/8CCmX23W/icon.png" alt="icon">
+                <h1>LINKEM</h1>
+            </div>
+  
+  
+            <div class="right">
+                <div class="title">
+                    <h2>Registration Page</h2>
+                </div>
+                <div class="form">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button type="submit">Enter</button>
+                    </form>
+                    <br>
+                    <p>Have an account? Login <a href="{%url 'login'%}">here</a></p>
+                </div>
+            </div>
+  
+        </div>
+    </section>
 
 {% endblock content %}

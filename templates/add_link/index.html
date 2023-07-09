@@ -1,15 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
-    
-    <h1>Linkem</h1>
-    <h1>Hello {{user}}</h1>
-    {%if links %}
-        {% for link in links %}
-            <h3> {{link.link_for}}: </h3>
-            <p >{{link.link}}</p>
-        {% endfor %}
-    {% else %}
-        <p>You have not added any link.. Add link <a href="{%url 'addlink' %}">here</a></p>
-    {% endif %}
+    <section>
+        <div class="content">
+            <div class="left">
+                <img src="https://i.postimg.cc/8CCmX23W/icon.png" alt="icon">
+                <h1>LINKEM</h1>
+            </div>
+  
+            <div class="right">
+                <div class="title">
+                    <h2>Welcome to LINKEM</h2>
+                </div>
+                <div class="form">
+                       
+                {%if links %}
+                {% for link in links %}
+                    <h3> {{link.link_for}}: </h3>
+                    <p >{{link.link}}</p>
+                {% endfor %}
+                {% else %}
+                <p>You have not added any link.. Add link <a href="{%url 'addlink' %}">here</a></p>
+                {% endif %}
+                </div>
+            </div>
+  
+        </div>
+    </section>
 {% endblock content %}
 
