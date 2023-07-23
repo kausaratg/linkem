@@ -7,5 +7,6 @@ class Add_link (models.Model):
     link_for = models.CharField(max_length=250)
     link = models.URLField(max_length=300)
 
+
     def __str__(self):
         return self.link_for

@@ -22,7 +22,7 @@ section{
     width: 750px;
     height: 460px;
     border-radius: 10px;
-
+    margin-top: -20px;
     background: #fff;
 }
 
@@ -152,7 +152,7 @@ button{
         flex-direction: column;
         width: 400px;
         height: fit-content;
-        margin: 20px auto;
+        margin: 10px auto;
     }
     .left{
         height: 250px;

@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href= "{%static 'css/style.css'%}" rel="stylesheet">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <section>
+        <div class="content position-relative">
+            <div class="right">
+                <div class="title">
+                    <h2>{{user.username}} LINKS</h2>
+                </div>
+                <div class="form">
+                       
+                {%if links %}
+                {% for link in links %}
+                    <hr>
+                    <h5> {{link.link_for}}: 
+                    <a href={{link.link}} >{{link.link}}</a>
+                    </h5>
+                    <hr>
+                {% endfor %}
+                {% else %}
+                <p>You have not added any link.. Add link <a href="{%url 'addlink' %}">here</a></p>
+                {% endif %}
+                </div>
+              
+                
+            </div>
+  
+        </div>
+        <div>
+            <a href = "">Download</a>
+
+            </div>
+    </section>
+ 
+
+ 
+    <script>
+        var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+          trigger: 'focus'
+        })
+      </script>
+    
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
+

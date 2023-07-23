@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <section>
-        <div class="content">
+        <div class="content position-relative">
             <div class="left">
                 <img src="https://i.postimg.cc/8CCmX23W/icon.png" alt="icon">
                 <h1>LINKEM</h1>
@@ -15,16 +15,27 @@
                        
                 {%if links %}
                 {% for link in links %}
-                    <h3> {{link.link_for}}: </h3>
-                    <p >{{link.link}}</p>
+                    <hr>
+                    <h5> {{link.link_for}}: 
+                    <a href={{link.link}} >{{link.link}}</a>
+                    </h5>
+                    <hr>
                 {% endfor %}
                 {% else %}
                 <p>You have not added any link.. Add link <a href="{%url 'addlink' %}">here</a></p>
                 {% endif %}
                 </div>
+                <div class="position-absolute bottom-0 end-0">
+                    <a href="{%url 'addlink'%}"><i class="bi bi-plus-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> </a>
+                </div>
+                
             </div>
   
         </div>
+        <div class="ml-5 mt-5">
+            {% comment %} <button type="button" class="btn btn-primary btn-lg"></button> {% endcomment %}
+
+            </div>
     </section>
 {% endblock content %}
 
